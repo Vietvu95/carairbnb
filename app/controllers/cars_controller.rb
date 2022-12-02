@@ -25,6 +25,19 @@ class CarsController < ApplicationController
 
   end
 
+  def edit
+  end
+
+  def update
+    @car.update(car_params)
+    redirect_to car_path(@car)
+  end
+
+  def destroy
+    @car.destroy
+    redirect_to cars_path, status: :see_other
+  end
+
 private
 
   def set_car
