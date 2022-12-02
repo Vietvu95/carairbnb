@@ -1,23 +1,12 @@
-<%= form_with model: car do |f| %>
-  <%= f.label :model %>
-  <%= f.text_field :model %>
-  <%= f.label :make %>
-  <%= f.text_field :make %>
-
-  <%= f.label :year %>
-  <%= f.text_field :year %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-
-  <%= f.label :tranmission %>
-  <%= f.text_field :tranmission %>
-  <%= f.label :colour %>
-  <%= f.text_field :colour %>
-
-  <%= f.submit %>
+<%= simple_form_for (car) do |f| %>
+  <%= f.input :model %>
+  <%= f.input :make %>
+  <%= f.input :year %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :transmission %>
+  <%= f.input :colour %>
+  <%= f.input :availability %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>
