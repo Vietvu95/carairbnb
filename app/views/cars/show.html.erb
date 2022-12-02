@@ -1,3 +1,32 @@
-<ul>
-  <%= @car.make %>
-</ul>
+<div class="container d-flex justify-content-center align-self-center">
+  <div class="card" style="width: 30rem;">
+    <img src="/assets/<%= @car_image %>" class="card-img-top w-100" alt="...">
+    <span class="btn btn-warning">  <%= link_to "Destroy the car",
+    car_path(@car),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></span>
+    <div class="card-body">
+      <h5 class="card-title"><%= @car.model %></h5>
+      <ul class="card-text">
+        <li><%= @car.make %></li>
+        <li><%= @car.year %></li>
+        <li><%= @car.category %></li>
+        <li><%= @car.transmission %></li>
+        <li><%= @car.description %></li>
+        <li><%= @car.price %></li>
+        <li><%= @car.availability %></li>
+      </ul>
+      <hr>
+      <p><strong>Booking confirm</strong></p>
+      <ul>
+        <% @car.bookings.each do |booking| %>
+          <li><%= booking.start_date %></li>
+          <li><%= booking.end_date %></li>
+        <% end %>
+      </ul>
+  <hr>
+      <a href="#" class="btn btn-primary d-flex justify-content-center "> Book Now</a>
+    </div>
+    <%= link_to "Back", cars_path %>
+    <%= link_to "Edit", edit_car_path %>
+  </div>
+
+ <!-- %= link_to "Book", new_car_booking_path %> -->
