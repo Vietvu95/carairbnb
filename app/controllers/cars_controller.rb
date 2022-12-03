@@ -38,6 +38,22 @@ class CarsController < ApplicationController
     redirect_to cars_path, status: :see_other
   end
 
+  def destroy
+    @car.destroy
+    redirect_to lists_car, status: :see_other
+  end
+
+
+  def available?(period)
+    if bookings.loaded?
+      bookings.none? { |booking| booking.overlap?(period) }
+    else
+      bookings.overlap(period).none?
+    end
+  end
+end
+
+
 private
 
   def set_car
@@ -47,5 +63,3 @@ private
   def car_params
     params.require(:car).permit(:model, :make, :year, :category, :description, :price, :transmission, :colour, :availability)
   end
-
-end
