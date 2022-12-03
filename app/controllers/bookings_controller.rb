@@ -10,11 +10,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.car = @car
-    if @booking.end_date < @booking.start_date
-      render :new
-    else
-      @booking.save
+    if @booking.save
       redirect_to car_path(@car)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
