@@ -18,7 +18,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     if @car.save
-      redirect_to new_car_path
+      redirect_to cars_path
     else
       render :new, status: :unprocessable_entity
     end
