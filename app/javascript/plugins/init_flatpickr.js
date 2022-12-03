@@ -1,17 +1,7 @@
-// Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
-import "./controllers"
-import "bootstrap"
-import "initFlatpickr"
-// import { initFlatpickr  } from "./plugins/init_flatpickr";
-// // document.addEventListener("turbolinks:load", ()=>{
-// //   flatpickr()
-// // })
-// console.log("Hello one")
-// initFlatpickr()
-import flatpickr from "flatpickr"
+// First we define two variables that are going to grab our inputs field. You can check the ids of the inputs with the Chrome inspector.
+const flatpickr = require("flatpickr")
 
-const foo = () => {
+const initFlatpickr = () => {
   const startDateInput = document.getElementById('booking_start_date');
   const endDateInput = document.getElementById('booking_end_date');
 
@@ -42,4 +32,4 @@ const foo = () => {
     })
   };
 }
-foo()
+export { initFlatpickr }

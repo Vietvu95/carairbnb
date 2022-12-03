@@ -24,6 +24,7 @@ puts "Creating cars"
     transmission: Faker::Vehicle.drive_type,
     colour: Faker::Vehicle.color
   )
+  car.save
   puts "Car with model: #{car.model} has been created!"
 end
 
