@@ -2,12 +2,12 @@ class CarsController < ApplicationController
 
   before_action :set_car, only: [:show, :edit, :update, :destroy]
   def index
-    @car_images = ["car1.jpeg", "car2.jpeg", "car3.jpeg", "car4.jpeg", "car5.jpeg","car6.jpeg", "car7.webp", "car8.jpeg","car9.jpeg","car9.jpeg","car10.jpeg","car11.jpeg", "car12.jpeg", "car13.jpeg", "car14.webp","car15.jpeg"]
+    @car_images = ["car1.jpg", "car2.jpg", "car3.jpg", "car4.jpg", "car5.jpg","car6.jpg", "car8.jpg","car9.jpg","car9.jpg","car10.jpg","car11.jpg", "car12.jpg", "car13.jpg", "car15.jpg"]
     @cars = Car.all
   end
 
   def show
-    @car_image = ["car1.jpeg", "car2.jpeg", "car3.jpeg", "car4.jpeg", "car5.jpeg","car6.jpeg", "car7.webp", "car8.jpeg","car9.jpeg","car9.jpeg","car10.jpeg","car11.jpeg", "car12.jpeg", "car13.jpeg", "car14.webp","car15.jpeg"].sample
+    @car_image = ["car1.jpg", "car2.jpg", "car3.jpg", "car4.jpg", "car5.jpg","car6.jpg", "car8.jpg","car9.jpg","car9.jpg","car10.jpg","car11.jpg", "car12.jpg", "car13.jpg","car15.jpg"].sample
   end
 
   def new
