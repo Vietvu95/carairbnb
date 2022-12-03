@@ -10,8 +10,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.car = @car
-    @booking.save
-    redirect_to car_path(@car)
+    if @booking.save
+      redirect_to car_path(@car)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
