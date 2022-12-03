@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import { initFlatpickr } from "./plugins/init_flatpickr"
+import { initFlatPickr } from "./plugins/init_flatpickr"
 
 
-initFlatpickr();
+initFlatPickr();

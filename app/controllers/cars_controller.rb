@@ -51,7 +51,6 @@ class CarsController < ApplicationController
       bookings.overlap(period).none?
     end
   end
-end
 
 
 private
@@ -63,3 +62,4 @@ private
   def car_params
     params.require(:car).permit(:model, :make, :year, :category, :description, :price, :transmission, :colour, :availability)
   end
+end
