@@ -38,12 +38,6 @@ class CarsController < ApplicationController
     redirect_to cars_path, status: :see_other
   end
 
-  def destroy
-    @car.destroy
-    redirect_to lists_car, status: :see_other
-  end
-
-
   def available?(period)
     if bookings.loaded?
       bookings.none? { |booking| booking.overlap?(period) }
