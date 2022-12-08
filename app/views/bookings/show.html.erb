@@ -4,8 +4,7 @@
     <p><%= @booking.car.model %></p>
     <p><%= @booking.start_date %></p>
     <p><%= @booking.end_date %></p>
+    <span class="btn btn-warning">  <%= link_to "Delete Booking",
+    booking_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></span>
 </div>
-<%= simple_form_for([@booking]) do |f| %>
-           <%= f.input :status, collection: ["accepted", "declined"] %>
-           <%= f.submit "submit", class: "btn btn-primary" %>
-<% end %>
