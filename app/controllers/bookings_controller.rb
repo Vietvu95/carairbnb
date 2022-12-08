@@ -1,6 +1,13 @@
 class BookingsController < ApplicationController
 
-  # before_action :set_car, only: %i[show create destroy new]
+  before_action :set_car, only: %i[index show edit update create destroy new]
+  def index
+    @bookings = Booking.all
+  end
+
+  def show
+    set_booking
+  end
 
   def new
     @booking = Booking.new
@@ -34,11 +41,27 @@ class BookingsController < ApplicationController
   def destroy
   end
 
+  def update
+    set_booking
+    @booking.update(booking_params)
+    @booking.user = current_user
+    redirect_to car_booking_path(@booking.car.id), status: :see_other
+  end
+
+  def destroy
+    set_booking
+    @booking.destroy
+    redirect_to car_bookings, status: :see_other
+  end
 
   private
 
   def set_car
     @car = Car.find(params[:car_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
 def booking_params
