@@ -5,6 +5,7 @@
     <p><%= @booking.start_date %></p>
     <p><%= @booking.end_date %></p>
 </div>
+<p>hello</p>
 
 <%= simple_form_for([@booking]) do |f| %>
            <%= f.input :status, collection: ["accepted", "declined"] %>
