@@ -1,9 +1,13 @@
 class BookingsController < ApplicationController
 
-  before_action :set_car, only: %i[show create destroy new]
+  # before_action :set_car, only: %i[show create destroy new]
 
   def new
     @booking = Booking.new
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def create
@@ -23,9 +27,9 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_car
-    @car = Car.find(params[:car_id])
-  end
+  # def set_car
+  #   @car = Car.find(params[:car_id])
+  # end
 
 def booking_params
   params.require(:booking).permit(:start_date, :end_date)
