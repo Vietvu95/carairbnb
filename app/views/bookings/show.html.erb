@@ -1,6 +1,12 @@
+
 <div class="container-fluid">
   <h1>Booking details</h1>
     <p><%= @booking.car.model %></p>
     <p><%= @booking.start_date %></p>
     <p><%= @booking.end_date %></p>
 </div>
+
+<%= simple_form_for([@booking]) do |f| %>
+           <%= f.input :status, collection: ["accepted", "declined"] %>
+           <%= f.submit "submit", class: "btn btn-primary" %>
+        <% end %>

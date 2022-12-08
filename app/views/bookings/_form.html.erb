@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="forms-container pt-5">
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-12 col-lg-6">
@@ -12,3 +13,15 @@
     </div>
   </div>
 </div>
+=======
+
+<div class="booking-card mx-auto" id='car-booking-dates' data-unavailable="<%= @car.unavailable_dates.to_json %>">
+
+       <%= simple_form_for([@car, @booking]) do |f| %>
+           <%= f.input :start_date, as: :string, type: :text %>
+           <%= f.input :end_date, as: :string, type: :text %>
+           <%= f.submit "Book Now", class: "btn btn-primary" %>
+        <% end %>
+
+ </div>
+>>>>>>> master

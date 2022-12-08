@@ -13,6 +13,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -25,7 +29,16 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to car_path(@booking.car.id), status: :see_other
+  end
+
+  def destroy
   end
 
   def update
@@ -52,11 +65,7 @@ class BookingsController < ApplicationController
   end
 
 def booking_params
-  params.require(:booking).permit(:start_date, :end_date)
+  params.require(:booking).permit(:start_date, :end_date, :status)
 end
-
-  # def booking_list
-  #   @booking = Booking.find(params[:booking_id])
-  # end
 
 end
