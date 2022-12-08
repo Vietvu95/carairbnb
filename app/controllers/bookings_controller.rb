@@ -15,6 +15,13 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    if @booking.status == "accepted"
+      @booking.status = "accepted"
+   elsif @booking.status == "declined"
+      @booking.status = "declined"
+   else
+    @booking.status = "waiting"
+   end
   end
 
   def create
@@ -56,9 +63,9 @@ class BookingsController < ApplicationController
 
   private
 
-  # def set_car
-  #   @car = Car.find(params[:car_id])
-  # end
+  def set_car
+    @car = Car.find(params[:car_id])
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])

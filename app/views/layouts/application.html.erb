@@ -15,9 +15,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render "shared/navbar" %>
-    <% if user_signed_in? %>
-      <h2>Hi <%= current_user.email %></h2>
-    <% end %>
     <%= yield %>
     <%= render "/shared/footer" %>
     <%= render "shared/flashes" %>
