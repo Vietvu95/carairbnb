@@ -1,0 +1,4 @@
+<%= simple_form_for([@booking]) do |f| %>
+           <%= f.input :status, collection: ["accepted", "declined"] %>
+           <%= f.submit "submit", class: "btn btn-primary" %>
+        <% end %>
