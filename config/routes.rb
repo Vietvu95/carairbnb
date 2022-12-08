@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cars do
     resources :bookings, only: %i[new create]
   end
+  resources :bookings, except: [:new, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
     resources :bookings, except: %i[new create]
   # Defines the root path route ("/")
