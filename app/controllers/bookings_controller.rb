@@ -56,9 +56,9 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_car
-    @car = Car.find(params[:car_id])
-  end
+  # def set_car
+  #   @car = Car.find(params[:car_id])
+  # end
 
   def set_booking
     @booking = Booking.find(params[:id])
