@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, except: %i[:new :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+    resources :bookings, except: %i[new create]
   # Defines the root path route ("/")
   # root "articles#index"
 

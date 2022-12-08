@@ -54,6 +54,6 @@ private
   end
 
   def car_params
-    params.require(:car).permit(:model, :make, :year, :category, :description, :price, :transmission, :colour, :availability)
+    params.require(:car).permit(:model, :make, :year, :category, :description, :price, :transmission, :colour, :availability, :photo)
   end
 end
