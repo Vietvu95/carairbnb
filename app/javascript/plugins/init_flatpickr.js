@@ -26,4 +26,4 @@ const initFlatPickr = () => {
   };
 }
 
-initFlatPickr();
+export { initFlatPickr };
