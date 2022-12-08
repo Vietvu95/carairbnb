@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
-  before_action :set_car, only: %i[index show edit update create destroy new]
+  before_action :set_car, only: %i[create new]
+
   def index
     @bookings = Booking.all
   end
@@ -11,17 +12,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-    if @booking.status == "accepted"
-      @booking.status = "accepted"
-   elsif @booking.status == "declined"
-      @booking.status = "declined"
-   else
-    @booking.status = "waiting"
-   end
   end
 
   def create
@@ -46,19 +36,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def update
-    set_booking
-    @booking.update(booking_params)
-    @booking.user = current_user
-    redirect_to car_booking_path(@booking.car.id), status: :see_other
-  end
-
-  def destroy
-    set_booking
+    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to car_bookings, status: :see_other
+    redirect_to car_path(@booking.car), status: :see_other
   end
 
   private
@@ -71,8 +51,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-def booking_params
-  params.require(:booking).permit(:start_date, :end_date, :status)
-end
-
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :status)
+  end
 end
