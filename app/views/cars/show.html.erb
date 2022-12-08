@@ -24,6 +24,16 @@
   <hr>
       <div><%= link_to "Book Now",  new_car_booking_path(@car), class: "btn btn-gradient" %></div>
     </div>
+       <hr>
+    <p><strong>Reviews</strong></p>
+    <ul class="list-group">
+      <% @car.reviews.each do |review| %>
+
+        <li class="list-group-item"><%= review.content %></li>
+      <% end %>
+    </ul>
+    <hr>
     <%= link_to "Back", cars_path %>
     <%= link_to "Edit", edit_car_path %>
+
   </div>
