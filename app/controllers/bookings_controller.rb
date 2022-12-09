@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_car, only: %i[create new edit update ]
+  before_action :set_car, only: %i[create new edit update]
 
   def index
     @bookings = Booking.all
