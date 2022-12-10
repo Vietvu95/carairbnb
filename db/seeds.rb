@@ -22,7 +22,8 @@ puts "Creating cars"
     availability: true,
     user_id: 1,
     transmission: Faker::Vehicle.drive_type,
-    colour: Faker::Vehicle.color
+    colour: Faker::Vehicle.color,
+    photo: Faker::LoremFlickr.unique.image
   )
   car.save
   puts "Car with model: #{car.model} has been created!"
