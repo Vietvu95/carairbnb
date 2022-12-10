@@ -67,13 +67,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td scope="row">1</td>
-          <td scope="row">Viet</td>
-          <td scope="row">Vu</td>
-          <td scope="row">Your car</td>
-          <td scope="row">peding</td>
-        </tr>
+        <% @bookings.each do |booking| %>
+          <%# turbo_frame_tag dom_id(booking) do %>
+            <tr>
+              <td scope="row"><%= booking.id %></td>
+              <td scope="row"><%= booking.user.email %></td>
+              <td scope="row"><%= booking.user.last_name %></td>
+              <td scope="row"><%= booking.car.model %> <%= booking.car.make %></td>
+              <td scope="row">
+                <%= booking.status %>
+                <% if booking.status == "pending" %>
+                  <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), data: {turbo_method: :patch} %>
+                  <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), data: {turbo_method: :patch} %>
+                <% end %>
+              </td>
+            </tr>
+          <%# end %>
+        <% end %>
       </tbody>
     </table>
     </div>
