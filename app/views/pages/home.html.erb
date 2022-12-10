@@ -1,5 +1,6 @@
 
 
+<head>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/moving-backwards-ute-girl-with-black-hair-trying-her-brand-new-expensive-car-automobile-salon_146671-16083.jpg?w=1480&t=st=1669906392~exp=1669906992~hmac=102b1c1bcc829bf49c1a0373207a6a6dd121e68a2cb1b35286af395bb5c85d62;">
   <div class="container">
     <h1>Find, book, and unlock cars.</h1>
@@ -7,56 +8,22 @@
     <div><%= link_to "Start Now",  cars_path, class: "btn btn-gradient" %></div>
   </div>
 </div>
-<!--
-  <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at LitzTrack
-  </div>
-</div>
--->
 
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted">
-  <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
-    </div>
-    <!-- Left -->
 
-    <!-- Right -->
-    <div>
-      <a href="" class="me-4 link-secondary">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-4 link-secondary">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 link-secondary">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 link-secondary">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 link-secondary">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 link-secondary">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
   </section>
   <!-- Section: Social media -->
+        <section class="text-center ">
+          <br>
+          <h4 class="mb-5"><strong>Rent cars by the hour, day, week or longer</strong></h4>
 
+          <div class="row">
+            <% @cars.each do |car| %>
+              <div class="col-12 col-md-4 mb-4 d-flex justify-content-between">
+                <%= render 'cars/car', car: car %>
+              </div>
+            <% end %>
+          </div>
+        </section>
   <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start mt-5">
@@ -66,7 +33,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3 text-secondary"></i>Company name
+            <i class="fas fa-gem me-3 text-secondary"></i>CarASAP
           </h6>
           <p>
             Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -82,16 +49,13 @@
             Products
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="#!" class="text-reset">Cars</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="#!" class="text-reset">Vans</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="#!" class="text-reset">4WD</a>
           </p>
         </div>
         <!-- Grid column -->

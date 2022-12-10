@@ -55,10 +55,19 @@
   font-weight: bold;
   background: linear-gradient(#167FFB, #0F60C4);
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  border: 1px solid #0F60C4;;
 }
 
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.card {
+  border: 3px;
+  color: black;
+  text-align: left;
+  font-size: 12;
+  padding: 0px 7px;
+}
+
