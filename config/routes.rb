@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :cars do
-    resources :bookings, only: %i[index new create]
+    resources :bookings, only: %i[index new create edit]
     resources :reviews, only: %i[new create]
   end
   resources :bookings, :reviews, only: %i[destroy show index edit update]
