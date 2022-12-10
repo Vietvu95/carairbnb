@@ -10,4 +10,8 @@ class Car < ApplicationRecord
       { from: range[0], to: range[1] }
     end
   end
+
+  def description_as_array
+    JSON.parse(description)
+  end
 end

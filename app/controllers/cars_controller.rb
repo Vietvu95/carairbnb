@@ -1,6 +1,12 @@
 class CarsController < ApplicationController
 
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+
+  def home
+    @cars = Car.all
+    @car = Car.find(params[:id])
+  end
+
   def index
     @car_images = ["car1.jpg", "car2.jpg", "car3.jpg", "car4.jpg", "car5.jpg","car6.jpg", "car8.jpg","car9.jpg","car9.jpg","car10.jpg","car11.jpg", "car12.jpg", "car13.jpg", "car15.jpg"]
     @cars = Car.all
