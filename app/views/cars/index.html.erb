@@ -37,7 +37,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%= link_to car.model, car_path(car) %> - <%= link_to car.year, car_path(car) %></h5>
                 <p class="card-text"><%= car.description%></p>
-                <a href="#!" class="btn btn-primary">book now</a>
+                <%= link_to "book", new_car_booking_path(car) %>
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <% if car.photo.attached? %>
                     <%= cl_image_tag car.photo.key, crop: :thumb %>
@@ -51,10 +51,3 @@
       </div>
     </div>
   </section>
-<div><%= link_to "➕ Create", new_car_path %></div>
-<div class="container-fluid">
-  <h1>List all cars</h1>
-    <% @cars.each do |car| %>
-      <div class="p-3 mb-2"><h6><%= link_to car.model, car_path(car) %> - <%= link_to car.year, car_path(car) %></h6></div>
-    <% end %>
-</div>
