@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contact/contact'
   get 'reviews/new'
   devise_for :users
   root to: "pages#home"
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "dashboard", to: "dashboard#dashboard", as: :dashboard
+  get "contact", to: "contact#contact", as: :contact
 end
